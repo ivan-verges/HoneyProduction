@@ -70,7 +70,7 @@ plt.ylabel("Honey Production")
 
 #Set the graph to plot our data and our future predictions
 plt.scatter(df["year"], df["totalprod"], color='skyblue', linewidth=4, label="Productions by Year")
-plt.scatter(X, y, color='red', linewidth=4, label="Avg. Productions by Year")
+plt.scatter(X, y, color='red', linewidth=6, label="Avg. Productions by Year")
 plt.plot(X, y_predict, color='blue', linewidth=4, label="Actual Predictions")
 plt.plot(X_future, future_predict, color='orange', linewidth=4, linestyle='dashed', label="Future Predictions")
 
