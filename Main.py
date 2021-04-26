@@ -1,11 +1,11 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import pandas as pd
 import wget
 from sklearn import linear_model
 
-#Defines a Base Path for the DataSet File
+#Defines a Base Path for the DataSet File (Location of this Main.py file)
 file_path = os.path.abspath(os.path.dirname(__file__))
 
 #Completes the File Path by adding "\\Data\\HoneyProduction.csv" for Windows, or "/Data/HoneyProduction.csv" for UNIX Like OS (Linux, Mac, etc)
@@ -14,7 +14,7 @@ if os.name == "nt":
 else:
     file_path += "/Data/HoneyProduction.csv"
 
-#If the File Path does Not Exists, Creates the Base Folder and Downloads the DataSet from Internet
+#If the File Path doesn't Exists, Creates the Base Folder and Downloads the DataSet from Internet
 if not os.path.exists(file_path):
     #Creates the Base Folder to Store the DataSet
     os.mkdir(os.path.abspath(os.path.dirname(file_path)))
@@ -40,7 +40,7 @@ y = prod_per_year["totalprod"]
 y = y.values.reshape(-1, 1)
 
 #Generates a years time-lapse to predict and formats it to be in the form of array ([[0, 1, 2]])
-X_future = np.array(range(2013, 2026))
+X_future = np.array(range(2013, 2027))
 X_future = X_future.reshape(-1, 1)
 
 #Creates a Linear Regression model to train
